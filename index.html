@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111510">
+<title>测测你玩 GTA6 的最后结局是什么？</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap');
+:root{--bg:#111510;--panel:#191f19;--lime:#c8f36a;--pink:#ff648d;--muted:#a1aa9c;--line:#343d32;--cream:#f5f0df}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,#34402c 0,transparent 38%),var(--bg);color:var(--cream);font-family:'Noto Sans SC',sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(100% - 36px,820px);margin:auto;padding:30px 0 56px}
+.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.brand{font:700 17px 'Barlow Condensed',sans-serif;color:var(--lime);letter-spacing:.12em}
+.hero{padding:clamp(28px,5vw,50px) 0 40px;position:relative}
+.eyebrow{color:var(--pink);letter-spacing:.22em;font-size:11px;font-weight:700}
+.hero h1{font-size:clamp(42px,9vw,78px);line-height:1.05;letter-spacing:-.055em;margin:18px 0 16px;max-width:700px}
+.hero h1 span{color:var(--lime)}
+.hero p{max-width:510px;color:#c0c7b9;line-height:1.9;font-size:14px}
+.cover-art{height:clamp(190px,34vw,285px);margin:0 0 38px;overflow:hidden;position:relative;border:1px solid #705b4a;background:#e88b78;box-shadow:0 16px 45px #0007}
+.cover-art svg{display:block;width:100%;height:100%}
+.cover-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1715118c,transparent 68%),linear-gradient(0deg,#111510bb,transparent 40%)}
+.cover-label{position:absolute;z-index:1;left:24px;bottom:19px;color:#fff2d8;font:700 12px 'Barlow Condensed',sans-serif;letter-spacing:.2em;text-shadow:0 2px 8px #000}
+.cover-label strong{display:block;color:#ffd76c;font-size:21px;letter-spacing:.14em;margin-top:6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 30px}
+.chip{border:1px solid var(--line);padding:7px 11px;color:#c4cbbd;font-size:11px;letter-spacing:.04em}
+.btn{border:0;background:var(--lime);color:#182012;padding:15px 24px;font-size:13px;font-weight:900;letter-spacing:.08em;transition:.2s;box-shadow:5px 5px 0 #536434}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #536434}
+.btn.secondary{background:transparent;color:var(--cream);border:1px solid var(--line);box-shadow:none}
+.note{color:#889184;font-size:11px;margin-top:20px}
+.screen{display:none;animation:enter .45s ease both}
+.screen.active{display:block}
+@keyframes enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.quizhead{display:flex;justify-content:space-between;align-items:center;margin:48px 0 12px}
+.qcount{font:700 13px 'Barlow Condensed',sans-serif;color:var(--lime);letter-spacing:.14em}
+.qtag{font-size:10px;color:var(--muted);letter-spacing:.12em}
+.progress{height:4px;background:#30382c;margin-bottom:40px}
+.progress span{display:block;height:100%;background:var(--lime);width:0;transition:width .35s}
+.question{font-size:clamp(23px,5vw,36px);line-height:1.45;margin:0 0 25px;letter-spacing:-.03em}
+.options{display:grid;gap:10px}
+.option{width:100%;display:flex;align-items:center;text-align:left;gap:15px;padding:17px 18px;color:var(--cream);background:#191f19;border:1px solid #343d32;transition:.2s;font-size:14px;line-height:1.6}
+.option:hover,.option.selected{border-color:var(--lime);background:#222b1d;transform:translateX(3px)}
+.letter{width:28px;height:28px;display:grid;place-items:center;border:1px solid #4a5543;color:var(--lime);font:700 13px 'Barlow Condensed',sans-serif;flex:0 0 28px}
+.quizfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:25px;color:#8e9888;font-size:11px}
+.quizfoot span{margin-left:auto;text-align:right}
+.back-btn{padding:9px 13px;font-size:11px;box-shadow:none;flex:0 0 auto}
+.back-btn:disabled{opacity:.38;cursor:default;transform:none}
+.result-shell{padding-top:36px}
+.result-card{background:linear-gradient(145deg,#222b1e,#161b16 68%);border:1px solid #59664d;position:relative;overflow:hidden;padding:clamp(22px,6vw,48px)}
+.result-card:after{content:"";position:absolute;width:300px;height:300px;border:1px solid #b9df66;border-radius:50%;right:-160px;top:-180px;box-shadow:0 0 0 30px #b9df6609,0 0 0 65px #b9df6607}
+.result-top{font:700 11px 'Barlow Condensed',sans-serif;letter-spacing:.2em;color:var(--lime);display:flex;justify-content:space-between}
+.result-title{font-size:clamp(38px,8vw,65px);line-height:1.15;margin:26px 0 6px;letter-spacing:-.05em}
+.result-sub{font-size:14px;color:#b7c0ad}
+.quote{font-size:17px;line-height:1.65;color:var(--lime);font-weight:700;border-left:2px solid var(--pink);padding-left:15px;margin:24px 0 28px}
+.result-copy{font-size:13px;line-height:1.95;color:#d0d5c9;max-width:620px}
+.stats{display:grid;gap:10px;margin:24px 0}
+.statrow{display:grid;grid-template-columns:75px 1fr 30px;align-items:center;gap:12px;font-size:11px;color:#c0c7b9}
+.meter{height:5px;background:#343d32}
+.meter i{display:block;height:100%;background:var(--lime)}
+.result-details{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+.detail{border-top:1px solid #3b4536;padding-top:13px}
+.detail b{color:var(--pink);font-size:10px;letter-spacing:.13em}
+.detail p{font-size:12px;line-height:1.8;color:#c3cbbd}
+.footmark{position:relative;z-index:1;margin-top:27px;display:flex;justify-content:space-between;color:#899384;font:600 10px 'Barlow Condensed',sans-serif;letter-spacing:.12em}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.disclaimer{text-align:center;color:#7f8979;font-size:10px;margin-top:25px;line-height:1.8}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:var(--lime);color:#182012;padding:10px 16px;font-size:12px;font-weight:700;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:560px){.wrap{width:min(100% - 28px,820px);padding-top:20px}.hero{padding-top:62px}.hero h1{font-size:47px}.result-details{grid-template-columns:1fr}.option{padding:14px}.quizhead{margin-top:35px}.result-card{padding:23px 19px}.actions .btn{flex:1;min-width:140px}.top span:last-child{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style></head>
+<body><main class="wrap"><header class="top"><div class="brand">VICE CITY · PERSONALITY FILE</div><span>LEONIDA ENDINGS / 40 QUESTIONS</span></header>
+<section id="home" class="screen active"><div class="hero"><div class="cover-art" aria-label="原创海岸城市夕照封面插画"><svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" role="img"><defs><linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#51435f"/><stop offset=".45" stop-color="#e07878"/><stop offset=".72" stop-color="#f2aa72"/><stop offset="1" stop-color="#247c83"/></linearGradient><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ed9a78"/><stop offset="1" stop-color="#135a62"/></linearGradient></defs><rect width="1200" height="420" fill="url(#sunset)"/><circle cx="830" cy="155" r="88" fill="#ffd47a" opacity=".9"/><path d="M0 263 Q180 235 350 268 T700 260 T1200 247 V420 H0Z" fill="url(#sea)"/><path d="M0 292 Q180 276 360 300 T720 290 T1200 282" fill="none" stroke="#ffcf91" stroke-width="3" opacity=".65"/><g fill="#20212b"><path d="M0 245V190h42v55h13v-83h54v83h21v-48h48v48h16v-97h70v97h22v-69h54v69h27v-40h50v40h28v-88h68v88h29v-53h53v53h20v-105h64v105h22v-73h43v73h28v-40h50v40h24v-110h70v110h19v-60h48v60h23v-92h65v92h22v-47h45v47h32v-80h52v80h42v175H0Z"/><path d="M210 420l145-83h494l158 83z" fill="#171820"/><path d="M322 420l105-65h326l128 65z" fill="#252531"/><path d="M480 404l70-34h67l-45 34zM765 404l-67-34h-68l44 34z" fill="#f6b55f" opacity=".8"/><path d="M915 271q5-44 17-84l-8-48 13 43 15-43-6 48q14 40 18 84z"/><path d="M929 178q-33-28-59-25 29 9 52 37-31-24-53-18 28 5 53 28-31-15-47-5 28-1 53 20z"/><path d="M938 160q18-38 51-46-25 18-43 49 30-27 52-24-27 10-49 34 30-18 46-12-25 1-53 25z"/></g><path d="M120 315h146l24 31-10 32-24 11H96l-28-23 13-32z" fill="#161920"/><path d="M107 314l27-31h71l30 31z" fill="#252834"/><path d="M122 289h77l16 22h-111z" fill="#ef9d86" opacity=".8"/><circle cx="112" cy="385" r="13" fill="#0e1117"/><circle cx="237" cy="385" r="13" fill="#0e1117"/><path d="M0 397h1200" stroke="#ffca7b" stroke-width="3" opacity=".6"/></svg><div class="cover-label">LEONIDA · AFTER HOURS<strong>YOUR STORY. YOUR ENDING.</strong></div></div><div class="eyebrow">YOUR LEONIDA ENDING</div><h1>测测你玩 <span>GTA6</span><br>最后会是什么结局</h1><p>别人进城忙着搞大事，你可能在给房间刷漆、陪狗出海、刷 Snapmatic 评论区，或者认真遵守红绿灯。40 个选择，看看你的 Leonida 人生最后会走向哪条支线。</p><div class="chips"><span class="chip">40 道生活选择</span><span class="chip">约 3 分钟</span><span class="chip">9 种离谱结局</span><span class="chip">含结局剧透</span><span class="chip">纯属娱乐</span></div><button class="btn" id="start">开始测试　↗</button><div class="note">无需登录 · 答案仅在本页计算 · 可随时重新测试</div></div></section>
+<section id="quiz" class="screen"><div class="quizhead"><span class="qcount" id="qcount">QUESTION 01 / 40</span><span class="qtag" id="qtag">DAILY ROUTINE</span></div><div class="progress"><span id="bar"></span></div><h2 class="question" id="question"></h2><div class="options" id="options"></div><div class="quizfoot"><button class="btn secondary back-btn" id="back" type="button">← 上一题</button><span>选择最像你的一项 · 点击选项自动进入下一题</span></div></section>
+<section id="result" class="screen"><div class="result-shell"><div class="result-card" id="sharecard"><div class="result-top"><span>YOUR LEONIDA ENDING</span><span id="resultno">ENDING 01 / 09</span></div><h2 class="result-title" id="rtitle"></h2><div class="result-sub" id="rsubtitle"></div><div class="quote" id="rquote"></div><p class="result-copy" id="rdesc"></p><div class="stats" id="stats"></div><div class="result-details"><div class="detail"><b>WHY YOU MATCH</b><p id="rwhy"></p></div><div class="detail"><b>HIDDEN ADVANTAGE</b><p id="rstrength"></p></div><div class="detail"><b>FUN EASTER EGG</b><p id="reaster"></p></div><div class="detail"><b>YOUR NEXT SIDE QUEST</b><p id="rquest"></p></div></div><div class="footmark"><span>LEONIDA SIDE QUESTS</span><span>JUST FOR FUN · NOT OFFICIAL</span></div></div><div class="actions"><button class="btn" id="savecard">保存结果卡片 ↓</button><button class="btn secondary" id="share">发给好友 ↗</button><button class="btn secondary" id="copylink">复制分享链接</button><button class="btn secondary" id="restart">再测一次　⟲</button></div><div class="disclaimer">保存卡片会生成竖版图片，手机可保存到照片或文件。分享链接需要先把网页部署到公开网址；本地文件链接无法被微信好友打开。</div></div></section><div class="toast" id="toast">结果卡片已复制</div></main>
+<script>
+const roles={
+ family:{name:'三口之家重聚',title:'Family Savings 满额结局',tag:'THE FAMILY PLAN',quote:'“两百万存好，活着回家，把儿子的手牵上。”',desc:'你愿意为了长线目标克制冲动：稳住关系、控制犯罪档案、把家庭储蓄一点点存满。游戏报道的圆满路线里，Jason 入狱后两年，露西娅用存款接他出狱，Jason 终于牵上儿子 Tomas 的手。',why:'你选的路更看重长期安全、关系经营和把钱留给真正重要的人。',strength:'能把眼前的刺激换成可持续的未来，关键时刻也愿意承担代价。',easter:'BuckMe 家庭储蓄目标：$2,000,000。别只看账户余额，终章选择也很关键。',quest:'真实游戏中的团圆结局还看关系等级、双方犯罪档案和终章选择；这份测试只做趣味性格映射。',color:'#ffd36c'},
+ mogul:{name:'枪火满格·黑金大亨',title:'火拼暴富结局',tag:'THE HIGH-RISK HUSTLER',quote:'“能用一梭子解决的事，为什么要等下一班车？”',desc:'你把每次冲突都当成翻盘机会：快进任务、硬碰警察、拿到现金再说。你追求的是靠自己闯出一座城的爽感，战利品一车一车往回拉。风险也一路拉满——全城都记得你。',why:'你的选择偏向强攻、即时收益和高风险高回报；相比慢慢积累，你更相信先把机会抢到手。',strength:'临场胆量足，遇到阻碍敢开路，也能把混乱局面变成行动窗口。',easter:'主播弹幕刷“警星几颗了”，你回：“先别数，数钱。”',quest:'想看家庭团圆路线？把冲动留给支线，主线里记得管好犯罪档案和 Family Savings。',color:'#ff648d'},
+ strategist:{name:'终极任务规划师',title:'主线速通结局',tag:'THE PLANNER',quote:'“我不是在做攻略，我是在尊重每个人的时间。”',desc:'别人还在找车，你已经把路线、撤退点和备用方案标好。你一路压缩加载时间，连临时状况也像计划的一部分。片尾字幕滚完，你甚至还记得有个支线没清。',why:'你总倾向先看目标、找规律、准备 Plan B。乱局越大，你越容易进入“让我来捋一下”的状态。',strength:'把队伍从“这咋办”带到“下一步做什么”，还顺手救了进度。',easter:'你的 Snapmatic 收藏夹像攻略网站，评论区有人问路线你会认真回复。',quest:'片尾字幕之后，允许自己不看地图，随便开一圈。',color:'#c8f36a'},
+ ruler:{name:'Vice City 全城热搜',title:'流量封神结局',tag:'THE MAIN CHARACTER',quote:'“我就正常玩了一下，怎么全城都在转我的视频？”',desc:'你走到哪儿都能把小事变成大场面。路人一个表情、一次意外追逐，都能被你剪成爆款。最后你没拿下全城，却拿下了全城的推荐页。',why:'你敢做决定、敢接挑战，也很会抓住眼前的机会。你是把剧情推起来的那个人。',strength:'临场反应快，能把突发事件变成自己的高光时刻。',easter:'你每次刷到“我们在 GTA6 之前……”都会点进去确认到底是什么。',quest:'下一条视频别只发事故现场，也把幕后笑场一起发了。',color:'#ff648d'},
+ scholar:{name:'Snapmatic 评论区考古学家',title:'互联网观察结局',tag:'THE SCROLLING SAGE',quote:'“我就看五分钟评论，怎么天都黑了？”',desc:'你在 Leonida 的手机里发现了另一个开放世界：短视频、神评论、离谱热搜，一条接一条。抢劫任务可以等，先看完这条评论区大战再说。',why:'你对故事、梗和人情观察入微，享受的不止是事件本身，还有大家怎么讲述它。',strength:'快速看懂气氛、识别荒诞，并给朋友精准转述最有梗的那条。',easter:'“纯路人，刚进来”——你的片尾字幕由评论区热评滚动组成。',quest:'退出手机，去现实里看一眼夕阳；这次不拍也没关系。',color:'#f4c46a'},
+ swordsman:{name:'海上自由人',title:'Cool Dog 救援结局',tag:'THE OPEN-WORLD NOMAD',quote:'“主线？等我先跟戴墨镜的狗去趟 Dog Island。”',desc:'你把开放世界真正玩成了开放世界。任务只是建议，远处的海平线才是召唤。一次迷路、一条狗、一艘摩托艇，就足够组成你的完美结局。',why:'你好奇、爱即兴，不太愿意让任务清单规定快乐该发生在哪里。',strength:'总能从岔路里发现别人错过的风景和新故事。',easter:'你的结局统计：主线进度 12%，海上日落截图 47 张。',quest:'这次带上补给，别再让 Cool Dog 负责全队后勤。',color:'#72c8cf'},
+ poet:{name:'Vice City 纯过日子人',title:'安稳生活结局',tag:'THE EVERYDAY LEGEND',quote:'“别人忙着改变世界，我把漏水的屋顶修好了。”',desc:'你在这座罪恶之城过出了烟火气：给家里补屋顶、买菜、刷墙、挑花、把车停进车位。你的故事没有惊天反转，但每天都像认真存档过。',why:'你在意真实的关系和日常的舒适感。比起全城通缉，你更想把自己的小日子过明白。',strength:'能从最普通的照料里获得满足，也让身边的人觉得踏实。',easter:'隐藏称号「纯过日子人」解锁：连续三天做完家务再出门搞事。',quest:'给自己的房间也挑个喜欢的颜色，现实版装修支线开启。',color:'#ff91a6'},
+ general:{name:'全城交通模范市民',title:'守法司机结局',tag:'THE RESPONSIBLE DRIVER',quote:'“任务可以失败，转弯灯不能不打。”',desc:'你在 GTA6 里停红灯、打转向、让行人先走。路边轻轻蹭一下都要找修车店。警方看你像模范市民，队友看你像驾驶学校派来的卧底。',why:'你重视规则、稳定和善后，做事认真到连游戏里的车漆都不允许有划痕。',strength:'可靠、细致，关键时刻能把大家和车一起安全带回家。',easter:'全城通缉等级：0 星。违停次数：理论上为零。',quest:'下一次经过空旷海岸，试试不打灯也没人扣分的自由。',color:'#e69254'},
+ recluse:{name:'家里蹲支线之王',title:'安全屋养老结局',tag:'THE HOMEBASE HERO',quote:'“我不是不出门，我是在等油漆干。”',desc:'别人开车追逐，你在安全屋挑墙漆、整理东西、玩屋里的小游戏。你把犯罪模拟器玩成生活模拟器，并成功证明：最安全的地方，还是家。',why:'你享受低压、熟悉、自己掌控节奏的空间，也能把小事做得很有仪式感。',strength:'不被热闹绑架，知道什么环境能让自己真正回血。',easter:'本周游戏时长：刷墙 40 分钟；出门任务：稍后再说。',quest:'邀请一个朋友来家里玩一局，安全屋也能开派对。',color:'#a9c98a'}
+};
+
+const dims=['strategist','ruler','scholar','swordsman','poet','general','recluse','family','mogul'];
+const raw=[
+['我刚回到家，Brian 的活儿已经在电话里等着我。','先确认报酬、路线和撤离点，再出门','马上接活，枪和车都准备好了','先把屋顶漏水修了，至少今晚有地方睡','看看地图上还有哪条支线没逛'],
+['我得在露西娅回来前把房间收拾好，墙漆也还没选。','先拿色卡试刷一块，别把整面墙毁了','挑最扎眼的颜色，刷完就走','问露西娅偏好的颜色，再决定','像 Stable Ronaldo 那样对着油漆纠结到直播间都等急'],
+['我接到一单运货任务，路上有两条路线。','走熟悉的路，先看警察巡逻点','走最短路线，出了事再硬闯','多绕一段安全路，别让货和人都出事','沿海边开，顺便看看有没有意外事件'],
+['我把一笔任务报酬拿到手，BuckMe 家庭储蓄账户还空着。','先存一部分，给长期目标打底','先买把趁手的枪，下一单赚回来','留一部分给家里修缮和生活开销','先不急着存，逛逛有什么值得买'],
+['我准备抢一辆车赶去任务点，路边有人盯着我看。','换辆不显眼的车，别给警察留线索','当面把车开走，谁拦谁倒霉','不想把路人卷进来，找辆空车','绕去车展或改装店，先挑辆喜欢的'],
+['我和露西娅要一起开车去见人，谁来开？','我开车，先把路线和风险理清','我开快点，早点到、早点收工','问露西娅想怎么走，配合她的节奏','让她开，我坐副驾看风景'],
+['我第一次撞见一个挡路的 NPC，任务还没开始。','先判断他是不是任务线索','直接动手清场，别耽误时间','先试着说服或绕过去','留意他会不会触发一段怪事'],
+['我面对一个落水的人，旁边还有鲨鱼在游。','找合适角度和装备，再决定怎么救','跳下去硬救，能救一个算一个','先把人救上来，别顾着任务计时','退远一点观察，看看附近有没有支援'],
+['我在任务中抓住了一个对手，他暂时失去反抗能力。','确认任务要求，再决定怎么处理','补一枪，省得他之后再找麻烦','留他一命，没必要把事做绝','先搜线索，看看他身上有什么信息'],
+['我刚把车停好，街角警灯亮了起来。','关掉车灯，观察巡逻路线再走','直接开车冲出去，把警星甩满','先确认露西娅和同伴都安全','停车等一会儿，看看警察在找谁'],
+['我和露西娅的抢劫计划出了岔子，警报提前响了。','按备用路线撤，别为了多拿现金恋战','火力压上去，抢到多少算多少','先掩护露西娅撤离，再处理剩下的','分头绕路，找个地方重新会合'],
+['我得选怎么对付一伙拦路的帮派成员。','先找掩体，争取不用正面硬拼','冲进去打出一条路','确保同伴有退路，再决定开火','先退开，看看能不能从别的街区绕过去'],
+['我打开犯罪档案，发现行动越来越容易惹来麻烦。','把行动收敛些，尽量维持 Professional','无所谓，Irredeemable 听着就很有排面','不为小事开枪，把火力留给真正目标','离开市区一阵，过几天清静日子'],
+['我刚收到一笔不小的现金，下一步怎么安排？','按比例分到储蓄、装备和日常开销','趁手里有钱，再接一单大的','优先往 Family Savings 存，先顾长远','先去海边放空，钱的事晚点再算'],
+['我想换辆车，但储蓄目标离两百万还差一截。','算算买车会不会影响存款进度','买最强的车，先把下一单做漂亮','选辆实用的，别把家庭目标掏空','今天先不买，继续开现有的'],
+['我发现转向灯可以手动控制，前面是个空路口。','照常打灯，按交通规则开过去','打着灯漂移过去，直播间肯定有反应','让车里的人选音乐，我稳稳开车','慢慢开，沿海边绕一圈也不错'],
+['我开车时轻轻蹭了一下路边，车门留下刮痕。','先去修车店估价，别让小损伤变大','不修了，车能跑就接着冲','修好再去接露西娅，不想让她坐坏车','停下来拍照，发到 Snapmatic 吐槽'],
+['我准备去码头，发现一只猫正坐在我想开的车里。','换辆车，别惹这只猫的主人','把车开走看看会发生什么','先把猫哄下来，再决定怎么走','录下它守车的样子，发给朋友看'],
+['我在海里迷路，远处一只戴墨镜的狗开着摩托艇靠近。','先确认海岸方向和剩余补给','马上跳上去，能离开水面就行','给露西娅发消息报个平安','跟着 Cool Dog 去 Dog Island 看看'],
+['我打开 Snapmatic，本来只想查个地址。','查完马上关掉，别让任务节奏散掉','刷到忘记时间，Jason 还站在原地','看看朋友发了什么，给有意思的内容点个赞','钻进评论区，专找最离谱的热评'],
+['我回到安全屋，今晚没有紧急任务。','检查装备、存档和明天路线','开电视看看 Leonida 新闻，顺便找点乐子','把家里整理好，明天再出去搞事','什么都不安排，待在家里慢慢回血'],
+['Cal 打电话问我要不要去钓鱼，我手头还有一堆事。','问清楚要花多久，安排好再去','活儿先放着，今天就去看看鱼咬不咬钩','陪 Cal 去，朋友难得主动约我','正好出城兜风，钓鱼和探索一起安排'],
+['我听 Cal 又开始讲他怀疑的阴谋，还说水边最安全。','听完重点，看看有没有能验证的线索','笑他想太多，赶紧接下一单','陪他坐会儿，至少让他把话说完','问他去哪钓鱼，先换个地方再聊'],
+['我正在钓鱼，手机突然响起一单高报酬的活。','看时间和报酬，权衡接不接','立刻收竿，钱和刺激都不能等','把行程告诉同伴再决定，别让人干等','今天不接了，鱼还没上钩呢'],
+['我看见警察追着一个 NPC 跑，直播观众喊我去添乱。','先判断介入会不会毁掉当前路线','像 Adin Ross 那样冲进冲突，警星亮了再说','别把旁人牵进来，我继续自己的事','远远看着，等会儿把离谱过程发动态'],
+['我连着跑了几场差事，Jason 的状态也不太好。','先去健身房活动一下，准备好再接下一单','不休息，直接冲进下一场，钱和进度都要','回安全屋吃点东西、整理装备，再稳稳出门','今天先不接活，开车去海边放空一会儿'],
+['我遇到任务动画卡了一下，警察和 NPC 都乱了。','先确认任务状态和出口，不要乱按','像 Kai Cenat 那样现场即兴发挥','看看露西娅和同伴在哪，先把人接上','停一停观察，看这是 bug 还是隐藏桥段'],
+['我在枪店看到新装备，手头现金刚好够买。','先比性能和价格，留钱做任务准备','买最猛的，火拼时才不吃亏','买基础必需品，把余钱存起来','今天不买，先去逛逛别的店'],
+['我发现高塔上有鸟巢和一颗涂色彩蛋。','记下位置，看看周围还有没有线索','爬上去马上拿到手','拍下来发给 Cal，问他是不是又要讲阴谋','沿着塔周围转转，继续找隐藏东西'],
+['我回到家，电视旁的 JoySystem 可以玩游戏。','先看规则，搞懂怎么拿高分','开一局就开一局，输了继续','叫 Cal 来一起玩，钓鱼回来正好放松','自己玩一会儿，今天不出门了'],
+['我在酒吧打台球，旁边一桌开始吵架。','先打完这一局，观察冲突会不会扩大','冲过去加入，台球桌边也能变战场','把同伴带离冲突，别把朋友卷进来','先离开酒吧，找个安静地方继续聊'],
+['我开车听到一首很对胃口的歌，前面还有任务标记。','记下歌名，按计划先去任务点','把音量开大，先开一段再说','问露西娅要不要一起听完','掉头去海边，把这首歌听到底'],
+['我遇到一个小任务，可以帮人，也可以趁机捞钱。','先看报酬、风险和后续影响','选钱最多的，机会不会一直等我','帮能帮的人，顺便把麻烦收住','今天不接任务，继续自由探索'],
+['我沿街走，NPC 撞了我一下还回头挑衅。','先看清周围，再决定是不是任务的一部分','马上还手，没人能白占我便宜','转身走开，没必要为一句话惹警星','拿手机记下这段，回头当成趣闻讲'],
+['我和露西娅的关系提示降了一格，我想把状态稳回来。','回想之前的选择，看看是哪一步影响了关系','读档重来，不能让数值掉下去','找露西娅聊清楚，别靠猜','安排一次两个人都喜欢的活动'],
+['我在海边收到朋友发来的新任务，日落马上就要开始。','先确认任务时间和路线，再决定怎么安排','立刻出发，做完任务再看日落','问露西娅要不要一起去，大家商量好再走','先坐在码头看完日落，任务晚点再说'],
+['我和露西娅一起行动时，任务中途需要分头。','先确认各自目标和会合位置','让她掩护我，我直接冲目标','保持联系，确保两边都能互相照应','各走各的路线，碰到再说'],
+['我和露西娅的关系不错，Family Savings 也快存满，终章将近。','检查关系、犯罪档案和存款，再进最后任务','装备拉满就够了，最后靠火力解决','把终章选择和两个人的安全放在第一位','先别急着收尾，去 Leonida 再过几天自由生活'],
+['我被警察堵在桥上，露西娅问我是继续冲还是找机会游出去。','先观察两边情况，判断哪条路有活路','绝不投降，带着火力冲过去','让露西娅跟我一起走，不能把她留在车里','寻找能让两个人都活下来的办法'],
+['字幕滚完，朋友问我下周还想怎么玩。','补齐没完成的任务和收集品','开新档走更凶、更赚钱的火拼路线','再体验一次完整故事，这回冲着团圆结局准备','不设目标，开车去地图边上钓鱼看海']
+];
+const answerMaps=[
+['strategist','mogul','poet','swordsman'],['strategist','ruler','family','scholar'],['strategist','mogul','general','swordsman'],['strategist','mogul','family','recluse'],['strategist','mogul','general','swordsman'],['strategist','ruler','family','swordsman'],['strategist','mogul','general','scholar'],['strategist','mogul','family','swordsman'],['strategist','mogul','family','scholar'],['strategist','mogul','family','general'],
+['strategist','mogul','family','swordsman'],['strategist','mogul','family','swordsman'],['general','mogul','family','recluse'],['strategist','mogul','family','recluse'],['strategist','mogul','family','swordsman'],['general','ruler','family','swordsman'],['general','mogul','family','scholar'],['general','mogul','family','scholar'],['strategist','mogul','family','swordsman'],['strategist','ruler','family','scholar'],
+['strategist','ruler','poet','recluse'],['strategist','ruler','family','swordsman'],['strategist','scholar','family','swordsman'],['strategist','mogul','family','swordsman'],['strategist','mogul','general','scholar'],['strategist','ruler','general','recluse'],['strategist','ruler','family','recluse'],['strategist','mogul','family','swordsman'],['strategist','mogul','scholar','swordsman'],['strategist','ruler','family','recluse'],
+['strategist','mogul','family','recluse'],['strategist','ruler','family','swordsman'],['strategist','mogul','family','swordsman'],['general','mogul','recluse','scholar'],['strategist','ruler','family','scholar'],['strategist','mogul','family','poet'],['strategist','mogul','family','swordsman'],['strategist','mogul','family','general'],['strategist','mogul','family','swordsman']
+,['strategist','mogul','family','swordsman']];
+answerMaps[1][3]='poet';answerMaps[3][2]='poet';answerMaps[14][3]='poet';answerMaps[23][3]='poet';answerMaps[25]=['strategist','mogul','poet','swordsman'];answerMaps[31][3]='poet';
+const questions=raw.map((r,i)=>({tag:i%5===0?'JASON’S CHOICE':i%5===1?'CRIME & CASH':['LEONIDA LIFE','CAL’S CALL','HEAT OF THE MOMENT'][i%3],text:r[0],options:r.slice(1).map((label,j)=>({label,dim:answerMaps[i][j]}))}));
+let index=0,answers=[],currentId=null;const $=s=>document.querySelector(s);function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$('#'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+$('#start').onclick=()=>{index=0;answers=[];show('quiz');renderQ()};$('#back').onclick=()=>{if(index>0){index--;renderQ()}};function renderQ(){const q=questions[index];$('#qcount').textContent=`QUESTION ${String(index+1).padStart(2,'0')} / 40` ;$('#qtag').textContent=q.tag;$('#question').textContent=q.text;$('#bar').style.width=`${((index+1)/questions.length)*100}%`;$('#back').disabled=index===0;$('#options').innerHTML=q.options.map((o,n)=>`<button class="option ${answers[index]===n?'selected':''}" data-index="${n}"><span class="letter">${String.fromCharCode(65+n)}</span><span>${o.label}</span></button>`).join('');document.querySelectorAll('.option').forEach(b=>b.onclick=()=>choose(+b.dataset.index));$('#quiz').classList.remove('active');void $('#quiz').offsetWidth;$('#quiz').classList.add('active')}
+function choose(n){answers[index]=n;if(index<questions.length-1){index++;renderQ()}else finish()}
+function finish(){const score=Object.fromEntries(dims.map(x=>[x,0]));questions.forEach((q,i)=>score[q.options[answers[i]].dim]++);const best=Math.max(...Object.values(score));let winners=dims.filter(d=>score[d]===best);if(winners.length>1){const last=questions.map((q,i)=>({d:q.options[answers[i]].dim,i})).reverse().find(x=>winners.includes(x.d));winners=[last?last.d:winners[0]]}renderResult(winners[0],score)}
+function renderResult(id,score){currentId=id;const r=roles[id];$('#resultno').textContent=`ENDING ${String(dims.indexOf(id)+1).padStart(2,'0')} / 09`;$('#rtitle').textContent=r.name;$('#rsubtitle').textContent=`${r.title}　·　${r.tag}`;$('#rquote').textContent=r.quote;$('#rdesc').textContent=r.desc;$('#rwhy').textContent=r.why;$('#rstrength').textContent=r.strength;$('#reaster').textContent=r.easter;$('#rquest').textContent=r.quest;$('#stats').innerHTML=dims.map(d=>`<div class="statrow"><span>${roles[d].title}</span><span class="meter"><i style="width:${Math.round(score[d]/Math.max(1,...Object.values(score))*100)}%;background:${roles[d].color}"></i></span><span>${score[d]}</span></div>`).join('');$('#bar').style.width='100%';show('result')}
+function resultText(){return `我的 GTA6 通关结局：${$('#rtitle').textContent} · ${$('#rsubtitle').textContent}\n${$('#rquote').textContent}\n来测测你玩 GTA6 最后会是什么结局！`}
+function shareUrl(){const url=new URL(location.href);url.hash=`ending=${currentId}`;return url.href}
+function wrapCanvasText(ctx,text,x,y,maxWidth,lineHeight,maxLines=4){let line='',lines=[];for(const char of text){const next=line+char;if(ctx.measureText(next).width>maxWidth&&line){lines.push(line);line=char}else line=next}if(line)lines.push(line);lines.slice(0,maxLines).forEach((item,i)=>ctx.fillText(item,x,y+i*lineHeight));return y+Math.min(lines.length,maxLines)*lineHeight}
+function createResultCard(){const c=document.createElement('canvas');c.width=1080;c.height=1350;const ctx=c.getContext('2d'),r=roles[currentId];const bg=ctx.createLinearGradient(0,0,1080,1350);bg.addColorStop(0,'#273321');bg.addColorStop(.55,'#171d17');bg.addColorStop(1,'#101410');ctx.fillStyle=bg;ctx.fillRect(0,0,c.width,c.height);ctx.strokeStyle='#c8f36a';ctx.globalAlpha=.12;ctx.lineWidth=2;for(let radius=120;radius<500;radius+=46){ctx.beginPath();ctx.arc(1010,30,radius,0,Math.PI*2);ctx.stroke()}ctx.globalAlpha=1;ctx.fillStyle='#c8f36a';ctx.font='700 24px Arial,sans-serif';ctx.fillText('YOUR LEONIDA ENDING',78,94);ctx.textAlign='right';ctx.fillStyle='#aab39f';ctx.font='600 20px Arial,sans-serif';ctx.fillText('GTA6 · JUST FOR FUN',1000,94);ctx.textAlign='left';ctx.fillStyle=r.color;ctx.fillRect(78,145,76,7);ctx.fillStyle='#f5f0df';ctx.font='900 76px "Microsoft YaHei",sans-serif';let y=wrapCanvasText(ctx,r.name,78,270,900,94,2);ctx.fillStyle='#b9c5b1';ctx.font='500 29px "Microsoft YaHei",sans-serif';y=wrapCanvasText(ctx,`${r.title}  ·  ${r.tag}`,78,y+2,900,44,2);ctx.fillStyle=r.color;ctx.fillRect(78,y+20,5,110);ctx.fillStyle='#e9efdF';ctx.font='700 33px "Microsoft YaHei",sans-serif';y=wrapCanvasText(ctx,r.quote,105,y+62,875,52,3);ctx.fillStyle='#c5cdbd';ctx.font='400 24px "Microsoft YaHei",sans-serif';y=wrapCanvasText(ctx,r.desc,78,y+42,900,40,5);ctx.strokeStyle='#43503c';ctx.beginPath();ctx.moveTo(78,y+18);ctx.lineTo(1000,y+18);ctx.stroke();ctx.fillStyle='#ff91a6';ctx.font='700 19px Arial,sans-serif';ctx.fillText('HIDDEN ADVANTAGE',78,y+67);ctx.fillStyle='#e0e5d9';ctx.font='400 23px "Microsoft YaHei",sans-serif';wrapCanvasText(ctx,r.strength,78,y+108,900,38,3);ctx.fillStyle='#c8f36a';ctx.font='700 18px Arial,sans-serif';ctx.fillText('YOUR EASTER EGG',78,1190);ctx.fillStyle='#c5cdbd';ctx.font='400 21px "Microsoft YaHei",sans-serif';wrapCanvasText(ctx,r.easter,78,1228,900,34,2);ctx.fillStyle='#899384';ctx.font='500 18px Arial,sans-serif';ctx.fillText('40 QUESTIONS  /  9 LEONIDA ENDINGS  /  NOT OFFICIAL',78,1320);return c}
+async function saveCard(){const canvas=createResultCard();const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob){toast('图片生成失败，请尝试截图保存');return}const file=new File([blob],`GTA6-我的通关结局-${currentId}.png`,{type:'image/png'});if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:'保存我的 GTA6 结局卡片'});toast('可在系统分享面板中选择“保存图片”或“存储图像')}catch(e){if(e.name!=='AbortError')toast('图片未保存，请重试或使用系统截图')}}else{const link=document.createElement('a');link.download=file.name;link.href=URL.createObjectURL(blob);link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1500);toast('结果卡片已下载，可从浏览器下载或文件中保存')}}
+$('#restart').onclick=()=>{index=0;answers=[];currentId=null;history.replaceState(null,'',location.pathname+location.search);show('home')};$('#savecard').onclick=saveCard;
+$('#copylink').onclick=async()=>{if(location.protocol!=='http:'&&location.protocol!=='https:'){toast('当前是本地文件；先部署到公开网址，微信好友才能打开链接');return}try{await navigator.clipboard.writeText(shareUrl());toast('结果链接已复制，可以粘贴到微信')}catch(e){toast('复制失败，请检查浏览器剪贴板权限')}};
+$('#share').onclick=async()=>{const url=(location.protocol==='http:'||location.protocol==='https:')?shareUrl():'';try{const canvas=createResultCard();const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));const file=blob?new File([blob],`GTA6-${currentId}.png`,{type:'image/png'}):null;if(file&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'我的 GTA6 通关结局',text:resultText(),...(url?{url}:{})})}else if(navigator.share){await navigator.share({title:'我的 GTA6 通关结局',text:resultText(),...(url?{url}:{})})}else{await navigator.clipboard.writeText(`${resultText()}${url?'\n'+url:''}`);toast('结果文案已复制；也可以先保存结果卡片图片')}}catch(e){if(e.name!=='AbortError')toast('系统分享不可用，可保存卡片后在微信中发送')}};
+function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),2200)}
+// 开发期快速自检：题量、选项、维度映射及结果卡片数据。
+console.assert(questions.length===40,'应有40题');console.assert(questions.every(q=>q.options.length===4&&q.options.every(o=>dims.includes(o.dim))),'题目选项或维度映射错误');console.assert(dims.every(d=>roles[d]),'结果定义缺失');
+const sharedEnding=new URLSearchParams(location.hash.slice(1)).get('ending');if(sharedEnding&&roles[sharedEnding])renderResult(sharedEnding,Object.fromEntries(dims.map(d=>[d,d===sharedEnding?7:3])));
+</script></body></html>
